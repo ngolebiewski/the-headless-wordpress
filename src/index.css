@@ -1,0 +1,56 @@
+.major-mono display-regular {
+  font-family: "Major Mono Display", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* // <weight>: Use a value from 400 to 700 */ */
+
+.kode-mono-hacker-type {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* // <weight>: Use a value from 100 to 1000 */
+
+.dm-sans-thin {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.dm-sans-medium {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "DM Sans", Futura, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  border-bottom: 6px solid black;
+}
+
+footer {
+  border-top: 6px solid black;
+}
+
+h1 { 
+  font-family: "Major Mono Display", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4em;
+}
+
+.shadow-bottom {
+  box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.2);
+}
