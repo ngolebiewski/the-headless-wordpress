@@ -5,7 +5,7 @@ const Footer = ({ oneLiner }) => {
         <h5 className="major-mono">Nick Golebiewski is an {oneLiner}</h5>
       </div>
 
-      <div className="social-icons">
+      <div className="social-icons" id="socials">
         <a href="https://www.instagram.com/nickgolebiewski/" target="_blank">
           <img src="./svg/instagram.svg" alt="Instagram" role="img" />
         </a>

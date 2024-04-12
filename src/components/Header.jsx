@@ -1,4 +1,4 @@
-const Header = ({ pages }) => {
+const Header = ({ pages, selectedPage, setSelectedPage }) => {
   return (
     <header className="shadow-bottom">
       <div className="navigation">

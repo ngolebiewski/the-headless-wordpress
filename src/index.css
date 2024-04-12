@@ -109,6 +109,11 @@ footer {
   padding:1rem;
 }
 
+#socials {
+  width:25%;
+}
+
+
 .social-icons > a > img {
   width: 1.5rem;
   height: 1.5rem;
