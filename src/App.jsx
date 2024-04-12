@@ -8,7 +8,8 @@ import Page from './components/Page';
 function App() {
 const [pages, setPages] = useState([]);
 const [oneLiner, setOneLiner] = useState("");
-// const [artworks, setArtworks] = useState([]);
+const [selectedPage, setSelectedPage] = useState(["hero"]);
+const [topLevelMenu, setTopLevelMenu] = useState([]);
 
   useEffect(() => {
     const fetchPages = async () => {
@@ -29,21 +30,18 @@ const [oneLiner, setOneLiner] = useState("");
     }
   };
 
-    // const fetchArtworks = async () => {
-    //   try {
-    //     const response = await axios.get('https://nickgolebiewski.com/wp-json/wp/v2/media?media_type=image');
-    //     setPages(response.data);
-    //   } catch (error) {
-    //     console.error('Error fetching pages:', error);
-    //   }
-    // };
-
     fetchPages();
     fetchOneLiner();
   }, []);
 
   useEffect(() => {
     console.log(pages);
+    // Get top level menu items
+    if (!topLevelMenu) {
+      const menuElems = 
+      setTopLevelMenu(menuElems)
+    }
+
   }, [pages]);
 
 ////////////////////////////////////////////////////////////////////////////
@@ -53,9 +51,9 @@ const [oneLiner, setOneLiner] = useState("");
     <>
       <div className="wrapper">
         <div className="content">
-          <Header pages={pages}></Header>
+          <Header pages={pages} selectedPage={selectedPage} setSelectedPage={setSelectedPage}></Header>
           <Home />
-          <Page />
+          <Page selectedPage={selectedPage}></Page>
           <Footer oneLiner={oneLiner}/>
         </div>
       </div>
