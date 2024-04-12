@@ -57,12 +57,14 @@
 
 ### Fonts
 - Using Google Fonts, I need to allow for Cross-Origin Resource Sharing to access the fonts from my shared server setup.
-`<IfModule mod_headers.c>
-    <FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
-        Header set Access-Control-Allow-Origin "https://fonts.gstatic.com"
-    </FilesMatch>
-</IfModule>
-`
+
+  ```apache
+  <IfModule mod_headers.c>
+      <FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+          Header set Access-Control-Allow-Origin "https://fonts.gstatic.com"
+      </FilesMatch>
+  </IfModule>
+
 - Alternatively I could download the fonts and add them through @fontface in CSS.
 
 
