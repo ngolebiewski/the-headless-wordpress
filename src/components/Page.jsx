@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
-const Page = ({ selectedPage }) => {
+const Page = ({ selectedPage, pageObject }) => {
   const [pageArtworks, setPageArtworks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,6 +26,10 @@ const Page = ({ selectedPage }) => {
 
   return (
     <>
+      <h5 className="major-mono">
+        {selectedPage}
+      </h5>
+
       {isLoading ? (
         <p>Images Loading...</p>
       ) : pageArtworks.length > 0 ? (

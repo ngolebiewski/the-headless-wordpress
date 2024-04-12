@@ -2,6 +2,7 @@ import React from 'react';
 
 const Header = ({ pages, selectedPage, setSelectedPage }) => {
   const handlePageClick = (pageSlug) => {
+    
     setSelectedPage(pageSlug);
     console.log(selectedPage);
   };
