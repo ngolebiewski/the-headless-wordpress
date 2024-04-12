@@ -3,6 +3,7 @@ import axios from 'axios';
 import PageList from './components/PageList'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Page from './components/Page';
 
 function App() {
 const [pages, setPages] = useState([]);
@@ -53,6 +54,7 @@ const [oneLiner, setOneLiner] = useState("");
             <Header pages={pages}></Header>
           </header>
           <PageList></PageList>
+          <Page></Page>
           <footer >
             <Footer oneLiner={oneLiner}/>
           </footer>

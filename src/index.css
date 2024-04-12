@@ -93,10 +93,37 @@ header {
 footer {
   border-top: 6px solid black;
   background-color: rgba(255, 255, 255, 0.9);
-  padding-left: 10px;
   bottom: 0;
   left: 0;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social-icons {
+  width:40%;
+  min-width: 400px;
+  padding:1rem;
+}
+
+.social-icons > a > img {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: .75rem; 
+  transition: filter 0.3s;
+}
+
+.social-icons > a > img:hover {
+  filter: brightness(120%) blur(2px); /* Fuzzy yellow circle effect */
+  border-radius: 40%; /* Make it a circle */
+  box-shadow: 0 0 10px 5px yellow; /* Fuzzy yellow circle effect */
+  width: 1.5em; /* Adjust the width and height to change the size of the circle */
+  height: 1.5em;
+  background-color: rgba(255, 255, 0, 0.5); /* Yellow with 60% opacity */
+  transition-duration: filter 0.3s;
 }
 
 h1 { 
@@ -116,7 +143,7 @@ button {
   /* background: rgba(255, 255, 0, 0.5); */
   background: white;
   max-height: 20px;
-  margin: 10px;
+  margin: 5px;
   font-size: 1em;
   font-family: "Kode Mono", monospace;
   font-optical-sizing: auto;
