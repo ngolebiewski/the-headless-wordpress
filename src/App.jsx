@@ -42,6 +42,9 @@ const [oneLiner, setOneLiner] = useState("");
     fetchOneLiner();
   }, []);
 
+  useEffect(() => {
+    console.log(pages);
+  }, [pages]);
 
 ////////////////////////////////////////////////////////////////////////////
 
