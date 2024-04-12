@@ -55,6 +55,15 @@
 - 100 is the max number you can retrieve. Therefore 
   -OK, via just the API, you can search on text in the description or caption, i.e. "street-vendors" but NOT in the alt_text. The latter would need to be a filter from the front-end, which might just be totally OK. Since it would mean querying the database once, and then sorting out client-side, which would be blazing fast for a small app/db, but slow for something bigger.
 
+### Fonts
+- Using Google Fonts, I need to allow for Cross-Origin Resource Sharing to access the fonts from my shared server setup.
+`<IfModule mod_headers.c>
+    <FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+        Header set Access-Control-Allow-Origin "https://fonts.gstatic.com"
+    </FilesMatch>
+</IfModule>
+`
+- Alternatively I could download the fonts and add them through @fontface in CSS.
 
 
 Cheers,
