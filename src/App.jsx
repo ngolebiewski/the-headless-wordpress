@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PageList from './components/PageList'
+import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Page from './components/Page';
@@ -50,14 +50,10 @@ const [oneLiner, setOneLiner] = useState("");
     <>
       <div className="wrapper">
         <div className="content">
-          <header className="shadow-bottom">
-            <Header pages={pages}></Header>
-          </header>
-          <PageList></PageList>
-          <Page></Page>
-          <footer >
-            <Footer oneLiner={oneLiner}/>
-          </footer>
+          <Header pages={pages}></Header>
+          <Home />
+          <Page />
+          <Footer oneLiner={oneLiner}/>
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 const Footer = ({ oneLiner }) => {
   return (
-    <>
+    <footer>
       <div className="social-icons">
         <h5 className="major-mono">Nick Golebiewski is an {oneLiner}</h5>
       </div>
@@ -34,7 +34,7 @@ const Footer = ({ oneLiner }) => {
           <img src="./svg/patreon.svg" alt="Patreon" role="img" />
         </a>
       </div>
-    </>
+    </footer>
   )
 }
 
