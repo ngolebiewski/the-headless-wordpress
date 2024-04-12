@@ -49,8 +49,13 @@
   - id
   - link   ?
 - https://nickgolebiewski.com/wp-json/wp/v2/media/
-- https://nickgolebiewski.com//wp-json/wp/v2/media?search=street-vendors
+- https://nickgolebiewski.com/wp-json/wp/v2/media?search=street-vendors&per_page=100  
+- in the link above replace "street-vendors" with the name of the page.
+- https://nickgolebiewski.com/wp-json/wp/v2/media?media_type=image&per_page=100
+- 100 is the max number you can retrieve. Therefore 
   -OK, via just the API, you can search on text in the description or caption, i.e. "street-vendors" but NOT in the alt_text. The latter would need to be a filter from the front-end, which might just be totally OK. Since it would mean querying the database once, and then sorting out client-side, which would be blazing fast for a small app/db, but slow for something bigger.
+
+
 
 Cheers,
 Nick

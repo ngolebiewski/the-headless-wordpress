@@ -1,4 +1,4 @@
-.major-mono display-regular {
+.major-mono {
   font-family: "Major Mono Display", monospace;
   font-weight: 400;
   font-style: normal;
@@ -6,7 +6,7 @@
 
 /* // <weight>: Use a value from 400 to 700 */ */
 
-.kode-mono-hacker-type {
+.hacker-font {
   font-family: "Kode Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -29,28 +29,103 @@
   font-style: normal;
 }
 
-body {
+body, html {
   font-family: "DM Sans", Futura, Helvetica, sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+}
+
+.content {
+  padding-bottom: 50px;
+}
+
+.bg-image {
+  /* Full height */
+  height: 100vh; 
+  /* Full width */
+  width: 100vw; 
+  /* The image used */
+  background-image: url("https://nickgolebiewski.com/wp-content/uploads/2014/06/Grand-Street-gouache1.jpg");
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-image {
+  width:100%;
+  background-size: cover;
+  background-position: center;
 }
 
 header {
   border-bottom: 6px solid black;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-left: 10px;
+  width: 100%;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.main-menu {
+  display: flex;
+  flex-direction: row;
+  margin-right: 5vw;
+  flex-wrap: wrap;
 }
 
 footer {
   border-top: 6px solid black;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-left: 10px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 h1 { 
   font-family: "Major Mono Display", monospace;
   font-weight: 400;
   font-style: normal;
-  font-size: 4em;
+  font-size: 4vh;
 }
 
 .shadow-bottom {
   box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  border-radius: 5px;
+  border: 1px solid black;
+  /* background: rgba(255, 255, 0, 0.5); */
+  background: white;
+  max-height: 20px;
+  margin: 10px;
+  font-size: 1em;
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: .8em;
+  font-style: normal;
+  transition-duration: 0.3s;
+}
+
+button:hover{
+  background: rgba(255, 255, 0, 0.8);
 }

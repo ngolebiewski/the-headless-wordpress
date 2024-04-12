@@ -19,12 +19,13 @@ function PageList() {
 
   return (
     <div>
-      <h2>Pages:</h2>
+      {/* <h2>Pages:</h2>
       <ul>
         {pages.map(page => (
           <li key={page.id}>{page.title.rendered}</li>
         ))}
-      </ul>
+      </ul> */}
+      <img className="hero-image" src="https://nickgolebiewski.com/wp-content/uploads/2014/06/Grand-Street-gouache1.jpg" />
     </div>
   );
 }
