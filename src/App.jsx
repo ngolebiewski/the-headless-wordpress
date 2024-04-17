@@ -4,6 +4,7 @@ import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Page from './components/Page';
+import SubHeader from './components/SubHeader';
 
 function App() {
 const [pages, setPages] = useState([]);
@@ -53,6 +54,7 @@ const [pageObject, setPageObject] = useState({});
       <div className="wrapper">
         <div className="content">
           <Header pages={pages} selectedPage={selectedPage} setSelectedPage={setSelectedPage} pageObject={pageObject} setPageObject={setPageObject}></Header>
+          <SubHeader pages={pages} selectedPage={selectedPage} setSelectedPage={setSelectedPage} pageObject={pageObject} setPageObject={setPageObject}></SubHeader>
           <Home />
           <Page selectedPage={selectedPage} pageObject={pageObject} ></Page>
           <Footer oneLiner={oneLiner}/>

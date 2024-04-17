@@ -24,29 +24,31 @@ const Page = ({ selectedPage, pageObject }) => {
   useEffect(() => {
     console.log(pageArtworks);
     console.log(pageObject)
-  }, [pageArtworks,pageObject]);
+  }, [pageArtworks, pageObject]);
 
   const sanitizedContent = pageObject.content ? DOMPurify.sanitize(pageObject.content.rendered) : '';
 
   return (
     <>
-      <h5 key="{selectedPage" className="major-mono">
-        {selectedPage}
-      </h5>
-      {sanitizedContent ? (<div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />):(<p></p>)}
+      <div className="main-content">
+        <h3 key="{selectedPage" className="major-mono">
+          {selectedPage}
+        </h3>
+        {sanitizedContent ? (<div className="wp-content" dangerouslySetInnerHTML={{ __html: sanitizedContent }} />) : (<p></p>)}
 
-      {isLoading ? (
-        <p>Images Loading...</p>
-      ) : pageArtworks.length > 0 ? (
-        pageArtworks.map((art) => (
-          <>
-            <img key={art.id} src={art.source_url} alt={art.alt_text} width="50%" />
-            {/* <p>{art.title.rendered}</p> */}
-          </>
-        ))
-      ) : (
-        <p>No images found for this page.</p>
-      )}
+        {isLoading ? (
+          <p>Images Loading...</p>
+        ) : pageArtworks.length > 0 ? (
+          pageArtworks.map((art) => (
+            <>
+              <img key={art.id} src={art.source_url} alt={art.alt_text} width="50%" />
+              {/* <p>{art.title.rendered}</p> */}
+            </>
+          ))
+        ) : (
+          <p>No images found for this page.</p>
+        )}
+      </div>
     </>
   );
 };

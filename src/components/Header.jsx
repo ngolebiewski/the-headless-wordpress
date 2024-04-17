@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = ({ pages, selectedPage, setSelectedPage, setPageObject, pageObject }) => {
   const handlePageClick = (pageSlug, page) => {
-    
+
     setSelectedPage(pageSlug);
     setPageObject({});
     setPageObject(page);
@@ -16,15 +16,21 @@ const Header = ({ pages, selectedPage, setSelectedPage, setPageObject, pageObjec
         <h1 className="major-mono">Nick Golebiewski</h1>
         <div className="main-menu">
           {pages && pages.length > 0 ? (
-            pages.map((page) => (
-              <button
-                className="shadow-bottom hacker-font"
-                key={page.id}
-                onClick={() => handlePageClick(page.slug, page)}
-              >
-                {page.title.rendered}
-              </button>
-            ))
+            pages.map((page) => {
+              console.log(page.parent, "parent page")
+              if (page.parent === 0) {
+                return (
+                  <button
+                    className="shadow-bottom hacker-font"
+                    key={page.id}
+                    onClick={() => handlePageClick(page.slug, page)}
+                  >
+                    {page.title.rendered.toUpperCase()}
+                  </button>
+                );
+              }
+              return null;
+            })
           ) : (
             <p>No pages available</p>
           )}
