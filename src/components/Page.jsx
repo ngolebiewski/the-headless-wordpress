@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import DOMPurify from 'dompurify';
 
 const Page = ({ selectedPage, pageObject }) => {
   const [pageArtworks, setPageArtworks] = useState([]);
@@ -22,13 +23,17 @@ const Page = ({ selectedPage, pageObject }) => {
 
   useEffect(() => {
     console.log(pageArtworks);
-  }, [pageArtworks]);
+    console.log(pageObject)
+  }, [pageArtworks,pageObject]);
+
+  const sanitizedContent = pageObject.content ? DOMPurify.sanitize(pageObject.content.rendered) : '';
 
   return (
     <>
-      <h5 className="major-mono">
+      <h5 key="{selectedPage" className="major-mono">
         {selectedPage}
       </h5>
+      {sanitizedContent ? (<div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />):(<p></p>)}
 
       {isLoading ? (
         <p>Images Loading...</p>

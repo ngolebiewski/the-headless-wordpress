@@ -10,6 +10,7 @@ const [pages, setPages] = useState([]);
 const [oneLiner, setOneLiner] = useState("");
 const [selectedPage, setSelectedPage] = useState(["hero"]);
 const [topLevelMenu, setTopLevelMenu] = useState([]);
+const [pageObject, setPageObject] = useState({});
 
   useEffect(() => {
     const fetchPages = async () => {
@@ -51,9 +52,9 @@ const [topLevelMenu, setTopLevelMenu] = useState([]);
     <>
       <div className="wrapper">
         <div className="content">
-          <Header pages={pages} selectedPage={selectedPage} setSelectedPage={setSelectedPage}></Header>
+          <Header pages={pages} selectedPage={selectedPage} setSelectedPage={setSelectedPage} pageObject={pageObject} setPageObject={setPageObject}></Header>
           <Home />
-          <Page selectedPage={selectedPage}></Page>
+          <Page selectedPage={selectedPage} pageObject={pageObject} ></Page>
           <Footer oneLiner={oneLiner}/>
         </div>
       </div>

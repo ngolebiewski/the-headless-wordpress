@@ -1,10 +1,13 @@
 import React from 'react';
 
-const Header = ({ pages, selectedPage, setSelectedPage }) => {
-  const handlePageClick = (pageSlug) => {
+const Header = ({ pages, selectedPage, setSelectedPage, setPageObject, pageObject }) => {
+  const handlePageClick = (pageSlug, page) => {
     
     setSelectedPage(pageSlug);
-    console.log(selectedPage);
+    setPageObject({});
+    setPageObject(page);
+    console.log("selected page from Header.jsx: ", selectedPage);
+    console.log("selected page object from Header.jsx: ", pageObject);
   };
 
   return (
@@ -17,7 +20,7 @@ const Header = ({ pages, selectedPage, setSelectedPage }) => {
               <button
                 className="shadow-bottom hacker-font"
                 key={page.id}
-                onClick={() => handlePageClick(page.slug)}
+                onClick={() => handlePageClick(page.slug, page)}
               >
                 {page.title.rendered}
               </button>
