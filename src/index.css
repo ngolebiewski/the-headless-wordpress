@@ -46,7 +46,6 @@ body, html {
   height: 100%;
 }
 
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -59,13 +58,9 @@ body, html {
 }
 
 .bg-image {
-  /* Full height */
   height: 100vh; 
-  /* Full width */
   width: 100vw; 
-  /* The image used */
-  background-image: url("https://nickgolebiewski.com/wp-content/uploads/2014/06/Grand-Street-gouache1.jpg");
-  /* Center and scale the image nicely */
+  background-image: url("https://nickgolebiewski.com/wp-content/uploads/2014/06/Grand-Street-gouache1.jpg"); 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -99,12 +94,16 @@ header {
 }
 
 .sub-header {
+  display: flex;
+  justify-content: end;
   background: black;
-  /* background: linear-gradient(217deg, rgba(255, 0, 255, 0.8), rgba(255,0,0,0) 70.71%),
-  linear-gradient(127deg, rgba(255,255,0,.8), rgba(0,255,0,0) 70.71%),
-  linear-gradient(336deg, rgba(0,255,255,.8), rgba(0,0,255,0) 70.71%); */
 }
 
+.sub-header > div > button:hover {
+  background: linear-gradient(217deg, rgba(255, 0, 255, 1), rgba(255,0,0,1) 70.71%),
+  linear-gradient(127deg, rgba(255,255,0,1), rgba(0,255,0,1) 70.71%),
+  linear-gradient(336deg, rgba(0,255,255,1), rgba(0,0,255,1) 70.71%);
+}
 
 
 .main-menu {
