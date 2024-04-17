@@ -136,7 +136,6 @@ footer {
   width:25%;
 }
 
-
 .social-icons > a > img {
   width: 1.5rem;
   height: 1.5rem;
@@ -200,4 +199,14 @@ button:hover{
 
 .main-content {
   padding-left: 10px;
+}
+
+.art-images {
+  width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .art-images {
+    width: 100%;
+  }
 }

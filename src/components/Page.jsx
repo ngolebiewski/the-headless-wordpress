@@ -41,7 +41,7 @@ const Page = ({ selectedPage, pageObject }) => {
         ) : pageArtworks.length > 0 ? (
           pageArtworks.map((art) => (
             <>
-              <img key={art.id} src={art.source_url} alt={art.alt_text} width="50%" />
+              <img className="art-images" key={art.id} src={art.source_url} alt={art.alt_text} />
               {/* <p>{art.title.rendered}</p> */}
             </>
           ))
