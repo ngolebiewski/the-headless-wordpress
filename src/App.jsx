@@ -55,8 +55,10 @@ const [pageObject, setPageObject] = useState({});
         <div className="content">
           <Header pages={pages} selectedPage={selectedPage} setSelectedPage={setSelectedPage} pageObject={pageObject} setPageObject={setPageObject}></Header>
           <SubHeader pages={pages} selectedPage={selectedPage} setSelectedPage={setSelectedPage} pageObject={pageObject} setPageObject={setPageObject}></SubHeader>
-          <Home />
-          <Page selectedPage={selectedPage} pageObject={pageObject} ></Page>
+          
+          {(!selectedPage || selectedPage == "home" || selectedPage == "hero") ? <Home /> : <Page selectedPage={selectedPage} pageObject={pageObject} />}
+      
+          
           <Footer oneLiner={oneLiner}/>
         </div>
       </div>

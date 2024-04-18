@@ -10,7 +10,7 @@ const Page = ({ selectedPage, pageObject }) => {
     const fetchPageArtworks = async () => {
       try {
         console.log("I am in the fetchPageArtworks useEffect getting: ", selectedPage)
-        const response = await axios.get(`https://nickgolebiewski.com/wp-json/wp/v2/media?search=${selectedPage}&per_page=30`)
+        const response = await axios.get(`https://nickgolebiewski.com/wp-json/wp/v2/media?search=${selectedPage}-page&per_page=30`)
         setPageArtworks(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -31,7 +31,7 @@ const Page = ({ selectedPage, pageObject }) => {
   return (
     <>
       <div className="main-content">
-        <h3 key="{selectedPage" className="major-mono">
+        <h3 key="selectedPage" className="major-mono">
           {selectedPage}
         </h3>
         {sanitizedContent ? (<div className="wp-content" dangerouslySetInnerHTML={{ __html: sanitizedContent }} />) : (<p></p>)}
@@ -42,11 +42,11 @@ const Page = ({ selectedPage, pageObject }) => {
           pageArtworks.map((art) => (
             <>
               <img className="art-images" key={art.id} src={art.source_url} alt={art.alt_text} />
-              {/* <p>{art.title.rendered}</p> */}
+              {/* <p dangerouslySetInnerHTML={{__html: art.title.rendered}} /> */}
             </>
           ))
         ) : (
-          <p>No images found for this page.</p>
+          <p>{console.log(`image loading error: no images with "${selectedPage}-page"`)}</p>
         )}
       </div>
     </>

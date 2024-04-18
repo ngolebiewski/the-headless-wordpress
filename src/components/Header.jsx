@@ -17,7 +17,7 @@ const Header = ({ pages, selectedPage, setSelectedPage, setPageObject, pageObjec
         <div className="main-menu">
           {pages && pages.length > 0 ? (
             pages.map((page) => {
-              console.log(page.parent, "parent page")
+              console.log("parent page: ", page.parent, "page.id: ", page.id, "page title: ", page.slug)
               if (page.parent === 0) {
                 return (
                   <button
@@ -32,7 +32,7 @@ const Header = ({ pages, selectedPage, setSelectedPage, setPageObject, pageObjec
               return null;
             })
           ) : (
-            <p>No pages available</p>
+            <p>Navigation loading...</p>
           )}
         </div>
       </div>
