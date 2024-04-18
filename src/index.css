@@ -170,7 +170,6 @@ button {
   background: white;
   max-height: 20px;
   margin: 5px;
-  font-size: 1em;
   font-family: "Kode Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -179,12 +178,24 @@ button {
   transition-duration: 0.3s;
 }
 
+button > a:link,
+button > a:hover,
+button > a:visited,
+button > a:focus {
+  color: black;
+}
+
+
 button:hover{
   background: rgba(255, 255, 0, 1);
 }
 
+.wp-wrapper{
+  border-bottom: 1px solid black;
+}
+
 .wp-content {
-  max-width: 100%;
+  max-width: 1000px;
 }
 
 .wp-content > p > img {
@@ -201,12 +212,73 @@ button:hover{
   padding-left: 10px;
 }
 
-.art-images {
-  width: 50%;
+.image-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-@media screen and (max-width: 600px) {
-  .art-images {
+.art-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(50% - 20px);
+  margin: 10px;
+} 
+
+.art-images {
+  width: 100%;
+}
+
+.art-caption {
+  font-size: .9em;
+  font-weight: 300;
+}
+
+.art-title {
+  font-style: italic;
+}
+
+/* 
+#sideways-scroller {
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap; 
+  display: flex; 
+  flex-direction: row;
+  max-height: 70vh;
+}
+
+.scroller-content {
+  flex: 0 0 auto; 
+  max-width: 50vw;
+  max-height: 100%;
+  background-color: #ccc;
+  margin-right: 10px;
+  scroll-snap-align: start;
+}
+
+#sideways-scroller > .art-card > .art-images {
+  max-width: 90%;
+  max-height: 90%;
+}
+*/
+
+
+@media screen and (min-width: 1500px) {
+  .art-card {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+  } 
+  
+}
+
+
+@media screen and (max-width: 700px) {
+  .art-card {
     width: 100%;
   }
 }

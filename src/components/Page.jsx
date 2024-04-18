@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import DOMPurify from 'dompurify';
+import ParentPage from "./ParentPage";
 
-const Page = ({ selectedPage, pageObject }) => {
+const Page = ({ selectedPage, pageObject, pages }) => {
   const [pageArtworks, setPageArtworks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -34,18 +35,28 @@ const Page = ({ selectedPage, pageObject }) => {
         <h3 key="selectedPage" className="major-mono">
           {selectedPage}
         </h3>
-        {sanitizedContent ? (<div className="wp-content" dangerouslySetInnerHTML={{ __html: sanitizedContent }} />) : (<p></p>)}
+        <div className="wp-wrapper">
+          {sanitizedContent ? (<div className="wp-content" dangerouslySetInnerHTML={{ __html: sanitizedContent }} />) : (<p></p>)}
+        </div>
+
+        {pageObject.parent === 0 ? (
+          <>
+            {console.log("I am a parent LOL!", pageObject.parent)}
+            <ParentPage selectedPage={selectedPage} pageObject={pageObject} pages={pages} />
+          </>
+        ) : null }
 
         {isLoading ? (
           <p>Images Loading...</p>
         ) : pageArtworks.length > 0 ? (
-          pageArtworks.map((art) => (
-            <>
-              <img className="art-images" key={art.id} src={art.source_url} alt={art.alt_text} />
-              {/* <p dangerouslySetInnerHTML={{__html: art.title.rendered}} /> */}
-            </>
-          ))
-        ) : (
+          <div className="image-wrapper" id="sideways-scroller">
+            {pageArtworks.map((art) => (
+              <div className="art-card scroller-content">
+                <img className="art-images" key={art.id} src={art.source_url} alt={art.alt_text} />
+                <p className="art-caption art-title" dangerouslySetInnerHTML={{ __html: art.title.rendered }} />
+              </div>
+            ))}
+          </div>) : (
           <p>{console.log(`image loading error: no images with "${selectedPage}-page"`)}</p>
         )}
       </div>
