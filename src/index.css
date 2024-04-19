@@ -183,10 +183,37 @@ button > a:hover,
 button > a:visited,
 button > a:focus {
   color: black;
+  text-decoration: none;
 }
 
 
 button:hover{
+  background: rgba(255, 255, 0, 1);
+}
+.button {
+  border-radius: 5px;
+  border: 1px solid black;
+  /* background: rgba(255, 255, 0, 0.5); */
+  background: white;
+  max-height: 20px;
+  margin: 5px;
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: .8em;
+  font-style: normal;
+  transition-duration: 0.3s;
+}
+
+.button > a:link,
+.button > a:hover,
+.button > a:visited,
+.button > a:focus {
+  color: black;
+}
+
+
+.button:hover{
   background: rgba(255, 255, 0, 1);
 }
 
@@ -233,7 +260,7 @@ button:hover{
   width: 100%;
 }
 
-.art-caption {
+.art-captioreact-router-domn {
   font-size: .9em;
   font-weight: 300;
 }

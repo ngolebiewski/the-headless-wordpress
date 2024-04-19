@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Header = ({ pages, selectedPage, setSelectedPage, setPageObject, pageObject }) => {
   const handlePageClick = (pageSlug, page) => {
@@ -20,13 +22,17 @@ const Header = ({ pages, selectedPage, setSelectedPage, setPageObject, pageObjec
               console.log("parent page: ", page.parent, "page.id: ", page.id, "page title: ", page.slug)
               if (page.parent === 0) {
                 return (
-                  <button
-                    className="shadow-bottom hacker-font"
-                    key={page.id}
-                    onClick={() => handlePageClick(page.slug, page)}
-                  >
-                    {page.title.rendered.toUpperCase()}
+                  <button>
+                    <Link
+                      key={page.id}
+                      to={`/${page.slug}`}
+                      className="shadow-bottom hacker-font"
+                      onClick={() => handlePageClick(page.slug, page)}
+                    >
+                      {page.title.rendered.toUpperCase()}
+                    </Link>
                   </button>
+
                 );
               }
               return null;
